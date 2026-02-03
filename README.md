@@ -20,23 +20,13 @@ Qwen3-VL-30B-A3B-Instruct-AWQ 为基于 Qwen3-VL-30B-A3B-Instruct 的 AWQ 四比
 
 本模型基于 Qwen/Qwen3-VL-30B-A3B-Instruct 进行 AWQ 量化，主要特性包括：支持图像与文本的多模态输入、长上下文（如 32K token）、与 vLLM 等推理框架兼容。下表为视觉-语言与纯文本场景下的性能参考（具体指标以官方发布为准）。
 
-| 视觉-语言性能参考 | 说明 |
-|------------------|------|
-| 见下表附图       | 多模态理解与生成能力 |
-
 ![视觉-语言性能表](assets/hf/table_nothinking_vl-30a3.jpg)
 
 ![纯文本性能表](assets/hf/table_nothinking_text-30a3.jpg)
 
 ## WebUI 界面与使用
 
-本仓库提供基于 Gradio 的 Web 演示界面，支持：
-
-- **图像上传**：可选上传一张图片，与文本一起构成多模态输入；
-- **文本输入**：在输入框中输入问题或指令；
-- **Stub 模式**：默认不加载模型权重，仅展示界面与输出格式，便于快速体验与部署验证。
-
-运行方式如下（需已安装 Python 与依赖）：
+本仓库提供基于 Gradio 的 Web 演示界面，支持图像上传与文本输入，默认 stub 模式不加载模型权重，仅展示界面与输出格式。运行方式如下（需已安装 Python 与依赖）：
 
 ```bash
 pip install -r requirements.txt
@@ -53,9 +43,7 @@ python app.py
 
 ## 依赖与运行环境
 
-- Python 3.10+
-- Gradio ≥ 4.0.0
-- 可选：若需真实推理，需另行配置 vLLM 或 Transformers 及相应模型权重，本仓库不包含也不自动下载大体积模型文件。
+Python 3.10+，Gradio ≥ 4.0.0。若需真实推理，需另行配置 vLLM 或 Transformers 及相应模型权重，本仓库不包含也不自动下载大体积模型文件。
 
 ## 许可证与说明
 
